@@ -15,7 +15,9 @@
 #import <SystemConfiguration/SCNetworkReachability.h>
 #import <sys/socket.h>
 #import <netinet/in.h>
+#if __clang_major__ < 21 && __has_include(<netinet6/in6.h>)
 #import <netinet6/in6.h>
+#endif
 #import <ifaddrs.h>
 #import <CFNetwork/CFNetwork.h>
 
